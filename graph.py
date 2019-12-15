@@ -9,6 +9,10 @@ class Graph:
             graph_dict = {}
         self.graph_dict = graph_dict
 
+    def is_vertex(self, node):
+        """ Returns true if node is vertex of graph, otherwise false """
+        return node in self.graph_dict
+
     def add_vertex(self, node):
         """ Adds new vertex to graph. If vertex is already present in graph,
             no action will take place.
