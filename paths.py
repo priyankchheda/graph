@@ -1,7 +1,10 @@
+""" finding paths from one graph node to another graph node
+"""
 from graph import Graph
 
 
 def find_path(g_obj, start, end, path=[]):
+    """ returns any existing path from start node to end node """
     path = path + [start]
     if start == end:
         return path
@@ -15,6 +18,7 @@ def find_path(g_obj, start, end, path=[]):
 
 
 def find_all_path(g_obj, start, end, path=[]):
+    """ returns all existing path from start node to end node """
     path = path + [start]
     if start == end:
         return [path]
@@ -30,6 +34,7 @@ def find_all_path(g_obj, start, end, path=[]):
 
 
 def find_shortest_path(g_obj, start, end, path=[]):
+    """ returns shortest existing path from start node to end node """
     path = path + [start]
     if start == end:
         return path
