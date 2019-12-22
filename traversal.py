@@ -1,7 +1,10 @@
+""" Graph Traversal Algorithms
+"""
 from graph import Graph
 
 
 def dfs(g_obj, start):
+    """ depth first search graph traversal algorithm"""
     visited, stack = set(), [start]
     while stack:
         vertex = stack.pop()
@@ -10,6 +13,19 @@ def dfs(g_obj, start):
             for next_node in g_obj.neighbours(vertex):
                 if next_node not in visited:
                     stack.append(next_node)
+    return visited
+
+def bfs(g_obj, start):
+    """ breath first search graph traversal algorithm"""
+    visited, queue = set(), [start]
+
+    while queue:
+        node = queue.pop(0)
+        if node not in visited:
+            visited.add(node)
+            for next_node in g_obj.neighbours(node):
+                if next_node not in visited:
+                    queue.append(next_node)
     return visited
 
 
@@ -23,6 +39,7 @@ def main():
     }
     g_obj = Graph(g_dict)
     print(dfs(g_obj, '1'))
+    print(bfs(g_obj, '1'))
 
 
 if __name__ == "__main__":
